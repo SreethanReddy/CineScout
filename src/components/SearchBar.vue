@@ -16,7 +16,6 @@ const search_value = ref('')
 const emit = defineEmits(['search'])
 
 function onSearchSubmit(){
-    console.log('1. SearchBar is emitting search for:', search_value.value);
     emit('search', search_value.value);
 }
 

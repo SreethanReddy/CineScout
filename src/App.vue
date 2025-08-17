@@ -6,8 +6,8 @@
               <SearchBar @search="handleSearch" />
             </div>
             <div class="flex space-x-4">
-              <router-link to="/" class="p-1 text-md">Home</router-link>
-              <router-link to="/watchlist" class="p-1 relative">
+              <router-link to="/" class="p-1 text-md" @click="movie_store.removeSearchMovieDetails()">Home</router-link>
+              <router-link to="/watchlist" class="p-1 relative" @click="movie_store.removeSearchMovieDetails()">
                 <span class="mr-2 text-md">Watchlist</span>
                 <span v-if="movie_store.watchListCount > 0"
                     class="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold p-1.5 rounded-full">
@@ -63,9 +63,11 @@ function handleSearch(search_value) {
   if (search_value.trim() !== '') {
        movie_store.searchMovieDetails(search_value);
   }else{
+    search_value.value = ''
     movie_store.removeSearchMovieDetails();
   }
 }
+
 
 </script>
 
