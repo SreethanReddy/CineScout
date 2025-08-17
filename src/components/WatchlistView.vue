@@ -10,7 +10,7 @@
         </div>
   </div>
   <div v-else>
-    <p class="text-white text-center font-bold p-4">Your watchlist is empty.</p>
+    <p class="text-white text-center font-bold pt-12">Your watchlist is empty.</p>
   </div>
 </template>
 
