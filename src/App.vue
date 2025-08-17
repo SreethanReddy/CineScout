@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#141414] p-3 min-h-screen">
-          <nav class="flex flex-row justify-between px-4 py-2 bg-[#141414] text-white fixed top-0 left-0 right-0 z-50">
+        <nav class="flex flex flex-col md:flex-row md:justify-between items-center px-4 py-2 bg-[#141414] text-white fixed top-0 left-0 right-0 z-50">
             <div class="flex space-x-4">
               <h1 class="p-1 font-semibold text-md">CineScout</h1>
               <SearchBar @search="handleSearch" />
