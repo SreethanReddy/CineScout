@@ -5,9 +5,9 @@
       <img :src="'https://image.tmdb.org/t/p/w500' + movie_store.movie_details.poster_path" alt="Poster" class="rounded-md mb-4" width="200"/>
       <p class="text-gray-300">{{ movie_store.movie_details.overview }}</p>
       <p class="mt-2 text-gray-400">Release Date: {{ movie_store.movie_details.release_date }}</p>
-      <p class="mt-2 text-gray-400">{{ movie_store.movie_details.renvenue }}</p>
+      <p class="mt-2 text-gray-400">{{ movie_store.movie_details.renvenue }}dollars</p>
       <p class="mt-2 text-gray-400">{{ movie_store.movie_details.runtime }}mins</p>
-      <p class="mt-2 text-gray-400">{{ movie_store.movie_details.budget }}</p>
+      <p class="mt-2 text-gray-400">{{ movie_store.movie_details.budget }}dollars</p>
     </div>
 </div>
 </template>
