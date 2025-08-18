@@ -63,7 +63,6 @@ function handleSearch(search_value) {
   if (search_value.trim() !== '') {
        movie_store.searchMovieDetails(search_value);
   }else{
-    search_value.value = ''
     movie_store.removeSearchMovieDetails();
   }
 }
