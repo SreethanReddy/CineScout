@@ -4,7 +4,11 @@
       type="text"
       placeholder="Search Movie"
       class="border-2 border-red-600 rounded-md p-1 bg-transparent"
-      v-model="search_value" />
+      v-model="search_value"
+      @change="onSearchSubmit"
+      @input="onSearchSubmit" 
+      />
+      
   </form>
 </template>
 
