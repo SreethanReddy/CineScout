@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1 class="text-white text-lg font-bold text-center">Trending Movies</h1>
+    <h1 class="text-white text-lg font-bold text-center m-2">Trending Movies</h1>
     <div class="rounded-lg grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 p-2">
         <div v-for="movie in movies" :key="movie.id" class="bg-[#242424] rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition p-4 flex flex-col">
             <NuxtLink :to="`/movie/${movie.id}`">
