@@ -47,6 +47,15 @@ onMounted(
         getPopularMovies();
     }
 )
+
+
+// function handleSearch(search_value) {
+//   if (search_value.trim() !== '') {
+//        movie_store.searchMovieDetails(search_value);
+//   }else{
+//     movie_store.removeSearchMovieDetails();
+//   }
+// }
 </script>
 
 <style>
