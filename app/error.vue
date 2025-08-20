@@ -10,5 +10,4 @@
 
 <script setup>
     const route =  useRoute();
-    
 </script>

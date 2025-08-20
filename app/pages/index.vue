@@ -1,8 +1,13 @@
 <template>
 <div>
+    <div v-if="loading" class="text-center pt-6 text-lg text-white">
+        <h1>Loading.....Please Wait</h1>
+    </div>
+
+    <div v-else>
     <h1 class="text-white text-lg font-bold text-center m-2">Trending Movies</h1>
     <div class="rounded-lg grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 p-2">
-        <div v-for="movie in movies" :key="movie.id" class="bg-[#242424] rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition p-4 flex flex-col">
+        <div v-for="movie in movies"   :key="movie.id" class="bg-[#242424] rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition p-4 flex flex-col justify-center items-center">
             <NuxtLink :to="`/movie/${movie.id}`">
                 <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" width="200"  class="rounded-md"/>
                 <h1 class="text-white font-semibold">{{ movie.title }}</h1>
@@ -17,6 +22,8 @@
         </div>
 
     </div>
+    </div>
+
 </div>
 
 </template>
@@ -27,6 +34,8 @@ import { useStore } from '~/stores/movielist';
 
 const store = useStore();
 const movies = ref([]);
+const loading = ref(true);
+
 
 function handleAddtoWatchlist(movie) {
   store.addToWatchlist(movie)
@@ -36,26 +45,20 @@ onMounted(
      () =>{
         async function getPopularMovies() {
         try {
+            loading.value = true;
             const popularMovies = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=5d7eacaaa65e0575188d70c4888c32c4");
             const data = await popularMovies.json();
             movies.value = data.results
         } catch (error) {
             console.error("Error fetching movies:", error);
+        }finally{
+            loading.value = false
         }
         }
 
         getPopularMovies();
     }
 )
-
-
-// function handleSearch(search_value) {
-//   if (search_value.trim() !== '') {
-//        movie_store.searchMovieDetails(search_value);
-//   }else{
-//     movie_store.removeSearchMovieDetails();
-//   }
-// }
 </script>
 
 <style>

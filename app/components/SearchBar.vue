@@ -1,5 +1,4 @@
 <template>
-  <form @submit.prevent="onSearchSubmit">
     <input
       type="text"
       placeholder="Search Movie"
@@ -8,8 +7,7 @@
       @change="onSearchSubmit"
       @input="onSearchSubmit" 
       />
-      
-  </form>
+
 </template>
 
 <script setup>
