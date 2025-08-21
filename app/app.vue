@@ -1,6 +1,6 @@
 <template>
   <div  class="bg-[#141414] p-3 min-h-screen">
-        <nav class="flex flex flex-col md:flex-row md:justify-between items-center px-4 py-3 bg-[#141414] text-white fixed top-0 left-0 right-0 z-50">
+        <nav class="flex flex flex-col md:flex-row md:justify-between items-center px-4 py-2 bg-[#141414] text-white fixed top-0 left-0 right-0 z-50">
             <div class="flex space-x-4">
               <NuxtLink to="/" class="pl-8 font-semibold text-xl text-white hover:text-red-500" @click="movie_store.removeSearchMovieDetails()">CineScout</NuxtLink>            </div>
             <div class="flex space-x-6">
