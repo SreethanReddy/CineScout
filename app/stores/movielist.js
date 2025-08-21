@@ -38,7 +38,8 @@ export const useStore = defineStore('variables', {
       try{
         const url_fetch = await fetch(url_search);
         const data = await url_fetch.json();
-        this.searchMovieDetailsResult = data.results
+        const sortedResults = data.results.sort((a, b) => b.vote_average - a.vote_average);
+        this.searchMovieDetailsResult = sortedResults;
       }catch(error){
         console.log(error)
       }
